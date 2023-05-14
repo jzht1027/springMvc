@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+<!--       http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool.xsd">-->
+    <!--扫描包-->
+    <context:component-scan base-package="com"></context:component-scan>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--注解驱动 必加，配置访问静态资源 -->
+    <mvc:annotation-driven conversion-service="conversionService"/>
+    <!-- 配置自定义类型转化器-->
+    <!--  FormattingConversionServiceFactoryBean: 可以同时支持 类型转换器和格式化   -->
+<!--    <bean class="org.springframework.context.support.ConversionServiceFactoryBean" id="conversionService">-->
+    <bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean" id="conversionService">
+            <!-- 同类行转换：使用了格式化注解，需要注释掉 自定义类型转换器-->
+<!--        <property name="converters">-->
+<!--            <set>-->
+<!--                <bean class="com.util.MyConverter"/>-->
+<!--            </set>-->
+<!--        </property>-->
+    </bean>
+
+    <!-- 视图控制器  可以实现直接访问WEB-INF目录下的jsp -->
+<!--    <mvc:view-controller path="/add" view-name="user/add"></mvc:view-controller>-->
+</beans>

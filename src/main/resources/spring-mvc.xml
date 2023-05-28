@@ -31,4 +31,9 @@
 
     <!-- 视图控制器  可以实现直接访问WEB-INF目录下的jsp -->
 <!--    <mvc:view-controller path="/add" view-name="user/add"></mvc:view-controller>-->
+
+    <!--配置访问静态资源-->
+    <mvc:annotation-driven/>
+
+    <mvc:resources mapping="/img/**" location="/img/"/>
 </beans>

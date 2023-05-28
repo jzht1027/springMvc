@@ -66,9 +66,9 @@
     <p>
         <!-- 动态获取数据源-->
         hobbies:
-        <form:checkbox path="hobbies" value="Singing"></form:checkbox>
+        <form:checkbox path="hobbies" value="唱歌"></form:checkbox>
         <form:label path="hobbies">唱歌</form:label>
-        <form:checkbox path="hobbies" value="dancing"></form:checkbox>
+        <form:checkbox path="hobbies" value="跳舞"></form:checkbox>
         <form:label path="hobbies">跳舞</form:label>
     <hr>
 <%--        <form:checkboxes path="hobbies" items="${list}"></form:checkboxes>--%>

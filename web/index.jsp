@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  Hello mvc
+  <img src="${pageContext.request.contextPath}/img/img.png">
   </body>
 </html>

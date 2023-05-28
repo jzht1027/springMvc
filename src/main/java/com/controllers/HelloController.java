@@ -22,9 +22,9 @@ public class HelloController {
         System.out.println("hello mvc:"+name);
 
         // redirect 重定向
-//        return "redirect:index.jsp";
+        return "redirect:index.jsp";
         // forward 转发 默认
-        return "index.jsp";
+//        return "index.jsp";
     }
 
     @RequestMapping("/show")
@@ -68,12 +68,12 @@ public class HelloController {
 
     @ModelAttribute
     public void initData(Model model){
-        List<String> list = Arrays.asList("Singing","dancing");
+        List<String> list = Arrays.asList("唱歌","跳舞");
         model.addAttribute("list",list);
 
         Map<String,String> map = new HashMap<String, String>();
-        map.put("beijing","北京");
-        map.put("shijiazhuang","石家庄");
+        map.put("北京","北京");
+        map.put("石家庄","石家庄");
         model.addAttribute("map",map);
 
     }
